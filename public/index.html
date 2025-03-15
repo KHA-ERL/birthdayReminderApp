@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Reminder App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">  
+  <script src="./script.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎂 Birthday Reminder App</h1>
+      <p class="text-muted">Never miss wishing your customers a happy birthday!</p>
+    </div>
+    
+    <div class="form-container">
+      <div class="card">
+        <div class="card-body p-4">
+          <h2 class="card-title mb-4">Add New Customer</h2>
+          
+          <form id="birthdayForm">
+            <div class="mb-3">
+              <label for="username" class="form-label">Name</label>
+              <input type="text" class="form-control" id="username" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="dateOfBirth" class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" id="dateOfBirth" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">Save Customer</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="card mt-4">
+        <div class="card-body p-4">
+          <h2 class="card-title mb-4">Registered Customers</h2>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Date of Birth</th>
+                </tr>
+              </thead>
+              <tbody id="usersList">
+                <!-- Users will be loaded here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
