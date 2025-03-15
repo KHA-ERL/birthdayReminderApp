@@ -12,7 +12,7 @@ An automated application that sends birthday wishes to customers via email.
 
 ## Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS, Bootstrap JavaScript
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Email**: Nodemailer with Gmail
