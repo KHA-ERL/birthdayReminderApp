@@ -12,7 +12,7 @@ An automated application that sends birthday wishes to customers via email.
 
 ## Tech Stack
 
-- **Frontend**: HTML, CSS, Bootstrap JavaScript
+- **Frontend**: HTML, Tailwind, JavaScript
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Email**: Nodemailer with Gmail
@@ -70,9 +70,9 @@ Request body:
 
 ```json
 {
-  "username": "Abiodun Adekunle",
-  "email": "abiodun@example.com",
-  "dateOfBirth": "2025-01-15"
+  "username": "Michael Paul",
+  "email": "michael@example.com",
+  "dateOfBirth": "2025-03-15"
 }
 ```
 

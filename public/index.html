@@ -2,67 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Birthday Reminder App</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./styles.css" rel="stylesheet">  
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="./script.js"></script>
-
 </head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>🎂 Birthday Reminder App</h1>
-      <p class="text-muted">Never miss wishing your customers a happy birthday!</p>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="container mx-auto p-6 flex flex-col items-center gap-6">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-purple-500">🎂 Birthday Reminder App</h1>
+      <p class="text-gray-600">Never miss wishing your customers a happy birthday!</p>
     </div>
     
-    <div class="form-container">
-      <div class="card">
-        <div class="card-body p-4">
-          <h2 class="card-title mb-4">Add New Customer</h2>
-          
-          <form id="birthdayForm">
-            <div class="mb-3">
-              <label for="username" class="form-label">Name</label>
-              <input type="text" class="form-control" id="username" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="dateOfBirth" class="form-label">Date of Birth</label>
-              <input type="date" class="form-control" id="dateOfBirth" required>
-            </div>
-            
-            <button type="submit" class="btn btn-primary w-100">Save Customer</button>
-          </form>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+      <!-- Add Customer Card -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 w-full">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Add New Customer</h2>
+        <form id="birthdayForm" class="space-y-4">
+          <div>
+            <label for="username" class="block text-gray-600">Name</label>
+            <input type="text" id="username" class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
+          </div>
+          <div>
+            <label for="email" class="block text-gray-600">Email</label>
+            <input type="email" id="email" class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
+          </div>
+          <div>
+            <label for="dateOfBirth" class="block text-gray-600">Date of Birth</label>
+            <input type="date" id="dateOfBirth" class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
+          </div>
+          <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">Save Customer</button>
+        </form>
       </div>
       
-      <div class="card mt-4">
-        <div class="card-body p-4">
-          <h2 class="card-title mb-4">Registered Customers</h2>
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Date of Birth</th>
-                </tr>
-              </thead>
-              <tbody id="usersList">
-                <!-- Users will be loaded here -->
-              </tbody>
-            </table>
-          </div>
+      <!-- Registered Customers Card -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 w-full">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Registered Customers</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border border-gray-200 rounded-lg">
+            <thead>
+              <tr class="bg-gray-200 text-gray-700 gap-6">
+                <th class="p-2 border">Name</th>
+                <th class="p-2 border">Email</th>
+                <th class="p-2 border">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody id="usersList" class="gap-6">
+              <!-- Users will be loaded here -->
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
