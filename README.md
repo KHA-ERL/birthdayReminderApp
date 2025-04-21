@@ -1,4 +1,5 @@
 # birthday-reminder-app
+<<<<<<< HEAD
 
 AltSchool Africa Third Semester Assignments 2
 An automated application that sends birthday wishes to customers via email.
@@ -23,7 +24,7 @@ An automated application that sends birthday wishes to customers via email.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Abiodun001-world/birthday-reminder-app.git
+   git clone https://github.com/KHA-ERL/birthday-reminder-app.git
    cd birthday-reminder-app
    ```
 
@@ -79,3 +80,4 @@ Request body:
 ## License
 
 MIT
+=======
