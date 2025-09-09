@@ -1,21 +1,36 @@
-const moogoose = require('mongoose');
+const mongoose = require('mongoose');
 require('dotenv').config();
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI && String(process.env.MONGODB_URI).trim();
 
 // connect to mongodb
 function connectToMongoDB() {
-    moogoose.connect(MONGODB_URI);
+    if (!MONGODB_URI) {
+        console.error('MONGODB_URI env var is not set. Set it in Render or your .env file.');
+        process.exit(1);
+    }
 
-    moogoose.connection.on('connected', () => {
+    if (!/^mongodb(\+srv)?:\/\//.test(MONGODB_URI)) {
+        console.error('Invalid MONGODB_URI. It must start with "mongodb://" or "mongodb+srv://"');
+        process.exit(1);
+    }
+
+    mongoose
+        .connect(MONGODB_URI, { serverSelectionTimeoutMS: 5000 })
+        .catch((err) => {
+            console.error('Initial MongoDB connection error:', err);
+            process.exit(1);
+        });
+
+    mongoose.connection.on('connected', () => {
         console.log('Connected to MongoDB successfully');
     });
 
-    moogoose.connection.on('error', (err) => {
-        console.log('Error connecting to MongoDB', err);
-    })
+    mongoose.connection.on('error', (err) => {
+        console.error('Error connecting to MongoDB', err);
+    });
 }
 
-module.exports = { 
-    connectToMongoDB 
+module.exports = {
+    connectToMongoDB,
 };

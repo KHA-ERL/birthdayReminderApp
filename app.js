@@ -16,6 +16,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+// Health check
+app.get("/health", (_req, res) => {
+  res.status(200).send("OK");
+});
+
 // Schedule cron job to run at 7am every day
 cron.schedule("0 7 * * *", () => {
   console.log("Running birthday checker...");
